@@ -1,17 +1,10 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+
 namespace BindingDemoMVVM.ViewModels
 {
-    /// <summary>
-    /// ViewModel для демонстрации одноразовой привязки (OneTime).
-    /// Значение передаётся только при загрузке.
-    /// </summary>
-    public class OneTimeBindingViewModel : ViewModelBase
+    public partial class OneTimeBindingViewModel : ObservableObject
     {
-        private string _initialValue = "Начальное значение (загружается один раз)";
-
-        public string InitialValue
-        {
-            get => _initialValue;
-            set => SetProperty(ref _initialValue, value);
-        }
+        [ObservableProperty]
+        private string message = "Это сообщение устанавливается один раз";
     }
 }
