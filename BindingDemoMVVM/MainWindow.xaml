@@ -1,34 +1,27 @@
 ﻿<Window x:Class="BindingDemoMVVM.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindingDemoMVVM"
         xmlns:controls="clr-namespace:BindingDemoMVVM.Controls"
-        Title="Binding Demo" Height="450" Width="800">
-
-    <Grid>
-
-        <TabControl>
-
-            <TabItem Header="Привязка по умолчанию">
-                <controls:DefaultBindingControl/>
-            </TabItem>
-
-            <TabItem Header="Двухсторонняя привязка">
-                <controls:TwoWayBindingControl/>
-            </TabItem>
-
-            <TabItem Header="Одноразовая привязка">
-                <controls:OneTimeBindingControl/>
-            </TabItem>
-
-            <TabItem Header="Односторонняя привязка">
-                <controls:OneWayBindingControl/>
-            </TabItem>
-
-            <TabItem Header="Триггеры">
-                <controls:TriggersControl/>
-            </TabItem>
-
-        </TabControl>
-
-    </Grid>
+        mc:Ignorable="d"
+        Title="Лабораторная работа: MVVM и привязки" Height="500" Width="700">
+    <TabControl>
+        <TabItem Header="Привязка по умолчанию">
+            <controls:DefaultBindingControl DataContext="{Binding DefaultBindingViewModel}"/>
+        </TabItem>
+        <TabItem Header="Двухсторонняя привязка">
+            <controls:TwoWayBindingControl DataContext="{Binding TwoWayBindingViewModel}"/>
+        </TabItem>
+        <TabItem Header="Одноразовая привязка">
+            <controls:OneTimeBindingControl DataContext="{Binding OneTimeBindingViewModel}"/>
+        </TabItem>
+        <TabItem Header="Односторонние привязки">
+            <controls:OneWayBindingControl DataContext="{Binding OneWayBindingViewModel}"/>
+        </TabItem>
+        <TabItem Header="Триггеры">
+            <controls:TriggersControl/>
+        </TabItem>
+    </TabControl>
 </Window>

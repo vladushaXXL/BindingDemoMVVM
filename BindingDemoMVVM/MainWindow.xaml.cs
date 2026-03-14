@@ -1,5 +1,5 @@
-﻿using BindingDemoMVVM.ViewModels;
-using System.Windows;
+﻿using System.Windows;
+using BindingDemoMVVM.ViewModels;
 
 namespace BindingDemoMVVM
 {

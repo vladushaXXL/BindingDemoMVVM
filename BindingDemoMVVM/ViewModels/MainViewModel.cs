@@ -1,40 +1,18 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-
-namespace BindingDemoMVVM.ViewModels
+﻿namespace BindingDemoMVVM.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : ViewModelBase
     {
-
-        private string _textValue;
-
-        public string TextValue
+        public MainViewModel()
         {
-            get => _textValue;
-            set
-            {
-                _textValue = value;
-                OnPropertyChanged();
-            }
+            TwoWayBindingViewModel = new TwoWayBindingViewModel();
+            OneTimeBindingViewModel = new OneTimeBindingViewModel();
+            OneWayBindingViewModel = new OneWayBindingViewModel();
+            DefaultBindingViewModel = new DefaultBindingViewModel();
         }
 
-        private int _sliderValue;
-
-        public int SliderValue
-        {
-            get => _sliderValue;
-            set
-            {
-                _sliderValue = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
+        public TwoWayBindingViewModel TwoWayBindingViewModel { get; }
+        public OneTimeBindingViewModel OneTimeBindingViewModel { get; }
+        public OneWayBindingViewModel OneWayBindingViewModel { get; }
+        public DefaultBindingViewModel DefaultBindingViewModel { get; }
     }
 }

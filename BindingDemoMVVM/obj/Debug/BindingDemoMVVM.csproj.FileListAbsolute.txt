@@ -1,6 +1,19 @@
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\BindingDemoMVVM.exe.config
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\BindingDemoMVVM.exe
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\BindingDemoMVVM.pdb
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Buffers.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Memory.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Buffers.xml
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Memory.xml
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\BindingDemoMVVM.csproj.AssemblyReference.cache
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\Controls\DefaultBindingControl.g.cs
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\Controls\OneTimeBindingControl.g.cs
@@ -22,5 +35,7 @@ C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\BindingDemoMVVM.Properties.Resources.resources
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\BindingDemoMVVM.csproj.GenerateResource.cache
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\BindingDemoMVVM.csproj.CoreCompileInputs.cache
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\BindingD.34249685.Up2Date
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\BindingDemoMVVM.exe
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\BindingDemoMVVM.pdb
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Debug\BindingDemoMVVM.exe.config
