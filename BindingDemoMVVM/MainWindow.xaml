@@ -3,10 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BindingDemoMVVM"
+        xmlns:local="clr-namespace:BindingDemoMVVM.Controls"
+        xmlns:viewModels="clr-namespace:BindingDemoMVVM.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
-        
+        <TabControl>
+
+            <TabItem Header="Привязка по умолчанию">
+                <local:DefaultBindingControl/>
+            </TabItem>
+
+            <TabItem Header="Двухсторонняя привязка">
+                <local:TwoWayBindingControl/>
+            </TabItem>
+
+            <TabItem Header="Одноразовая привязка">
+                <local:OneTimeBindingControl/>
+            </TabItem>
+
+            <TabItem Header="Односторонняя привязка">
+                <local:OneWayBindingControl/>
+            </TabItem>
+
+            <TabItem Header="Триггеры">
+                <local:TriggersControl/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

@@ -1,0 +1,11 @@
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\BindingDemoMVVM.csproj.AssemblyReference.cache
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\Controls\DefaultBindingControl.g.cs
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\Controls\OneTimeBindingControl.g.cs
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\Controls\OneWayBindingControl.g.cs
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\Controls\TriggersControl.g.cs
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\Controls\TwoWayBindingControl.g.cs
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\MainWindow.g.cs
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\App.g.cs
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\BindingDemoMVVM_MarkupCompile.cache
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\obj\Release\BindingDemoMVVM_MarkupCompile.lref
