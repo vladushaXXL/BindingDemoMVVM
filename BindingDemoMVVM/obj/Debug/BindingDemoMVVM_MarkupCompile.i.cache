@@ -16,5 +16,5 @@ C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\
 221209945456
 Controls\DefaultBindingControl.xaml;Controls\OneTimeBindingControl.xaml;Controls\OneWayBindingControl.xaml;Controls\TriggersControl.xaml;Controls\TwoWayBindingControl.xaml;MainWindow.xaml;
 
-False
+True
 
