@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM\App.xaml
-6-424398095
+8-1521265505
 
-16-480721780
-24771409092
-Controls\DefaultBindingControl.xaml;Controls\OneTimeBindingControl.xaml;Controls\OneWayBindingControl.xaml;Controls\TriggersControl.xaml;Controls\TwoWayBindingControl.xaml;MainWindow.xaml;
+18-1286983952
+23-285390859
+Controls\DefaultBindingControl.xaml;Controls\OneTimeBindingControl.xaml;Controls\OneWayBindingControl.xaml;Controls\TriggersControl.xaml;Controls\TwoWayBindingControl.xaml;MainWindow.xaml;Resources\Strings.ru.xaml;Resources\Strings.en.xaml;
 
 True
 

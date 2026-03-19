@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="WindowTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Демонстрация привязок WPF</sys:String>
+    <sys:String x:Key="LanguageLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Язык:</sys:String>
+    <sys:String x:Key="ShowMessageButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Показать сообщение</sys:String>
+    <sys:String x:Key="TabDefaultBinding" xmlns:sys="clr-namespace:System;assembly=mscorlib">Привязка по умолчанию</sys:String>
+    <sys:String x:Key="TabTwoWayBinding" xmlns:sys="clr-namespace:System;assembly=mscorlib">Двухсторонняя привязка</sys:String>
+    <sys:String x:Key="TabOneTimeBinding" xmlns:sys="clr-namespace:System;assembly=mscorlib">Одноразовая привязка</sys:String>
+    <sys:String x:Key="TabOneWayBinding" xmlns:sys="clr-namespace:System;assembly=mscorlib">Односторонняя привязка</sys:String>
+    <sys:String x:Key="TabTriggers" xmlns:sys="clr-namespace:System;assembly=mscorlib">Триггеры</sys:String>
+    <sys:String x:Key="Default_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Привязка по умолчанию (Mode не указан)</sys:String>
+    <sys:String x:Key="Default_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Для TextBox по умолчанию TwoWay, для TextBlock, Slider и CheckBox используется OneWay.</sys:String>
+    <sys:String x:Key="Default_TextLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Текст:</sys:String>
+    <sys:String x:Key="Default_NumberLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Число:</sys:String>
+    <sys:String x:Key="Default_FlagLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Флаг:</sys:String>
+    <sys:String x:Key="Default_FlagContent" xmlns:sys="clr-namespace:System;assembly=mscorlib">Включено</sys:String>
+    <sys:String x:Key="Default_SliderLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Слайдер:</sys:String>
+    <sys:String x:Key="TwoWay_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Двухсторонняя привязка (TwoWay)</sys:String>
+    <sys:String x:Key="TwoWay_NameLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Имя (TextBox, TwoWay):</sys:String>
+    <sys:String x:Key="TwoWay_MirrorLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">То же значение UserName (TextBlock, OneWay - только чтение):</sys:String>
+    <sys:String x:Key="TwoWay_AgeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Возраст (Slider):</sys:String>
+    <sys:String x:Key="TwoWay_AgeValuePrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Возраст:</sys:String>
+    <sys:String x:Key="TwoWay_AgeValueSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib">лет</sys:String>
+    <sys:String x:Key="TwoWay_IsActiveLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Активен (IsActive)</sys:String>
+    <sys:String x:Key="TwoWay_IsActiveValuePrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">IsActive =</sys:String>
+    <sys:String x:Key="OneTime_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Одноразовая привязка (OneTime)</sys:String>
+    <sys:String x:Key="OneTime_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">Значение передается только при загрузке. Изменения в ViewModel после загрузки не отображаются.</sys:String>
+    <sys:String x:Key="OneTime_InputLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">TextBox привязан к InitialValue с Mode=OneTime:</sys:String>
+    <sys:String x:Key="OneTime_Note" xmlns:sys="clr-namespace:System;assembly=mscorlib">При вводе в TextBox значение в UI не обновляется из ViewModel. Изменение InitialValue после загрузки тоже не попадет на экран.</sys:String>
+    <sys:String x:Key="OneWay_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Односторонняя привязка (OneWay)</sys:String>
+    <sys:String x:Key="OneWay_Description" xmlns:sys="clr-namespace:System;assembly=mscorlib">CurrentTime обновляется по таймеру раз в секунду. UI получает обновления только от источника.</sys:String>
+    <sys:String x:Key="OneWay_CurrentTimeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Текущее время:</sys:String>
+    <sys:String x:Key="Triggers_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Триггеры</sys:String>
+    <sys:String x:Key="Triggers_PropertyTriggerDescription" xmlns:sys="clr-namespace:System;assembly=mscorlib">1. PropertyTrigger - кнопка меняет цвет при наведении (IsMouseOver):</sys:String>
+    <sys:String x:Key="Triggers_HoverButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Наведи курсор</sys:String>
+    <sys:String x:Key="Triggers_DataTriggerDescription" xmlns:sys="clr-namespace:System;assembly=mscorlib">2. DataTrigger - текст меняется при условии (CheckBox IsChecked):</sys:String>
+    <sys:String x:Key="Triggers_EnableCondition" xmlns:sys="clr-namespace:System;assembly=mscorlib">Включить условие</sys:String>
+    <sys:String x:Key="Triggers_ConditionOff" xmlns:sys="clr-namespace:System;assembly=mscorlib">Условие выключено</sys:String>
+    <sys:String x:Key="Triggers_ConditionOn" xmlns:sys="clr-namespace:System;assembly=mscorlib">Условие включено!</sys:String>
+    <sys:String x:Key="Triggers_Note" xmlns:sys="clr-namespace:System;assembly=mscorlib">(Текст и стиль зависят от состояния CheckBox)</sys:String>
+    <sys:String x:Key="Triggers_EventTriggerDescription" xmlns:sys="clr-namespace:System;assembly=mscorlib">3. EventTrigger - анимация при нажатии кнопки (Click):</sys:String>
+    <sys:String x:Key="Triggers_AnimatedButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Нажми для анимации</sys:String>
+    <sys:String x:Key="GreetingTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Сообщение</sys:String>
+    <sys:String x:Key="GreetingMessageFormat" xmlns:sys="clr-namespace:System;assembly=mscorlib">Здравствуйте, {0}! Язык приложения успешно переключен.</sys:String>
+    <sys:String x:Key="FallbackUserName" xmlns:sys="clr-namespace:System;assembly=mscorlib">пользователь</sys:String>
+</ResourceDictionary>

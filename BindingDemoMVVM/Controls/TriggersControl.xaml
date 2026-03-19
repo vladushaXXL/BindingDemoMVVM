@@ -1,13 +1,12 @@
-﻿<UserControl x:Class="BindingDemoMVVM.Controls.TriggersControl"
+<UserControl x:Class="BindingDemoMVVM.Controls.TriggersControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:BindingDemoMVVM.Controls"
              mc:Ignorable="d"
-             d:DesignHeight="350" d:DesignWidth="500">
+             d:DesignHeight="350"
+             d:DesignWidth="500">
     <UserControl.Resources>
-        <!-- Стиль кнопки с PropertyTrigger: цвет при наведении -->
         <Style x:Key="HoverButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="LightGreen"/>
             <Setter Property="Padding" Value="15,8"/>
@@ -18,54 +17,69 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <!-- DataTrigger: текст меняется при условии (IsChecked) -->
-        <Style x:Key="ConditionTextStyle" TargetType="TextBlock">
-            <Setter Property="Text" Value="Условие выключено"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding IsChecked, ElementName=ConditionCheckBox}" Value="True">
-                    <Setter Property="Text" Value="Условие включено!"/>
-                    <Setter Property="Foreground" Value="Green"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        <!-- EventTrigger: анимация при нажатии -->
+
         <Style x:Key="AnimatedButtonStyle" TargetType="Button">
-            <Setter Property="Content" Value="Нажми для анимации"/>
             <Setter Property="Padding" Value="15,8"/>
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetProperty="(Button.RenderTransform).(ScaleTransform.ScaleX)"
-                                             From="1" To="1.2" Duration="0:0:0.1" AutoReverse="True"/>
+                                             From="1"
+                                             To="1.2"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="True"/>
                             <DoubleAnimation Storyboard.TargetProperty="(Button.RenderTransform).(ScaleTransform.ScaleY)"
-                                             From="1" To="1.2" Duration="0:0:0.1" AutoReverse="True"/>
+                                             From="1"
+                                             To="1.2"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="True"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
+
     <StackPanel Margin="20" VerticalAlignment="Top">
-        <TextBlock Text="Триггеры" FontWeight="Bold" FontSize="14" Margin="0,0,0,15"/>
-        <!-- PropertyTrigger -->
-        <TextBlock Text="1. PropertyTrigger — кнопка меняет цвет при наведении (IsMouseOver):" 
-                   TextWrapping="Wrap" Margin="0,0,0,8"/>
-        <Button Style="{StaticResource HoverButtonStyle}" Content="Наведи курсор" Width="180" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-        <!-- DataTrigger -->
-        <TextBlock Text="2. DataTrigger — текст меняется при условии (CheckBox IsChecked):" 
-                   TextWrapping="Wrap" Margin="0,0,0,8"/>
+        <TextBlock Text="{DynamicResource Triggers_Title}" FontWeight="Bold" FontSize="14" Margin="0,0,0,15"/>
+        <TextBlock Text="{DynamicResource Triggers_PropertyTriggerDescription}" TextWrapping="Wrap" Margin="0,0,0,8"/>
+        <Button Style="{StaticResource HoverButtonStyle}" Content="{DynamicResource Triggers_HoverButton}" Width="180" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <TextBlock Text="{DynamicResource Triggers_DataTriggerDescription}" TextWrapping="Wrap" Margin="0,0,0,8"/>
         <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-            <CheckBox x:Name="ConditionCheckBox" Content="Включить условие" Margin="0,0,15,0" VerticalAlignment="Center"/>
-            <TextBlock Style="{StaticResource ConditionTextStyle}" VerticalAlignment="Center"/>
+            <CheckBox x:Name="ConditionCheckBox" Content="{DynamicResource Triggers_EnableCondition}" Margin="0,0,15,0" VerticalAlignment="Center"/>
+            <Grid VerticalAlignment="Center">
+                <TextBlock Text="{DynamicResource Triggers_ConditionOff}" FontSize="14">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=ConditionCheckBox}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Text="{DynamicResource Triggers_ConditionOn}" FontSize="14" Foreground="Green" FontWeight="Bold">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=ConditionCheckBox}" Value="True">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
         </StackPanel>
-        <TextBlock Text="(Текст и стиль зависят от состояния CheckBox)" Foreground="Gray" FontSize="11" Margin="0,0,0,20"/>
-        <!-- EventTrigger -->
-        <TextBlock Text="3. EventTrigger — анимация при нажатии кнопки (Click):" 
-                   TextWrapping="Wrap" Margin="0,0,0,8"/>
-        <Button Style="{StaticResource AnimatedButtonStyle}" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+        <TextBlock Text="{DynamicResource Triggers_Note}" Foreground="Gray" FontSize="11" Margin="0,0,0,20"/>
+
+        <TextBlock Text="{DynamicResource Triggers_EventTriggerDescription}" TextWrapping="Wrap" Margin="0,0,0,8"/>
+        <Button Style="{StaticResource AnimatedButtonStyle}" Content="{DynamicResource Triggers_AnimatedButton}" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <ScaleTransform ScaleX="1" ScaleY="1"/>
             </Button.RenderTransform>
