@@ -23,6 +23,9 @@ namespace BindingDemoMVVM.Services
             };
 
             currentLanguage = SupportedLanguages[0];
+            var culture = new CultureInfo(currentLanguage.CultureCode);
+            CultureInfo.CurrentCulture = culture;
+            CultureInfo.CurrentUICulture = culture;
         }
 
         public static LocalizationManager Instance => instance;
