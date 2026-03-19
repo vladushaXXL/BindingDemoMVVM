@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BindingDemoMVVM</name>
+    </assembly>
+    <members>
+        <member name="T:BindingDemoMVVM.App">
+            <summary>
+            Логика взаимодействия для App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:BindingDemoMVVM.Controls.DefaultBindingControl">
+            <summary>
+            Логика взаимодействия для DefaultBindingControl.xaml
+            </summary>
+            <summary>
+            DefaultBindingControl
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.Controls.DefaultBindingControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BindingDemoMVVM.Controls.OneTimeBindingControl">
+            <summary>
+            Логика взаимодействия для OneTimeBindingControl.xaml
+            </summary>
+            <summary>
+            OneTimeBindingControl
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.Controls.OneTimeBindingControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BindingDemoMVVM.Controls.OneWayBindingControl">
+            <summary>
+            Логика взаимодействия для OneWayBindingControl.xaml
+            </summary>
+            <summary>
+            OneWayBindingControl
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.Controls.OneWayBindingControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BindingDemoMVVM.Controls.TriggersControl">
+            <summary>
+            Логика взаимодействия для TriggersControl.xaml
+            </summary>
+            <summary>
+            TriggersControl
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.Controls.TriggersControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BindingDemoMVVM.Controls.TwoWayBindingControl">
+            <summary>
+            Логика взаимодействия для TwoWayBindingControl.xaml
+            </summary>
+            <summary>
+            TwoWayBindingControl
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.Controls.TwoWayBindingControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BindingDemoMVVM.MainWindow">
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:BindingDemoMVVM.ViewModels.OneWayBindingViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BindingDemoMVVM.ViewModels.OneWayBindingViewModel"/> class.
+            </summary>
+        </member>
+        <member name="T:BindingDemoMVVM.Properties.Resources">
+            <summary>
+              Класс ресурсов со строгим типом для поиска локализованных строк и пр.
+            </summary>
+        </member>
+        <member name="P:BindingDemoMVVM.Properties.Resources.ResourceManager">
+            <summary>
+              Возврат кэшированного экземпляра ResourceManager, используемого этим классом.
+            </summary>
+        </member>
+        <member name="P:BindingDemoMVVM.Properties.Resources.Culture">
+            <summary>
+              Переопределяет свойство CurrentUICulture текущего потока для всех
+              подстановки ресурсов с помощью этого класса ресурсов со строгим типом.
+            </summary>
+        </member>
+    </members>
+</doc>

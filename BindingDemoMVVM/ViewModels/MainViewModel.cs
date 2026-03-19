@@ -1,76 +1,54 @@
 using BindingDemoMVVM.Commands;
 using BindingDemoMVVM.Services;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 
 namespace BindingDemoMVVM.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : ObservableObject
     {
-        private readonly LocalizationManager localizationManager = LocalizationManager.Instance;
         private readonly RelayCommand showGreetingCommand;
-        private string userName;
         private LocalizationManager.LanguageOption selectedLanguage;
 
         public MainViewModel()
         {
-            selectedLanguage = localizationManager.CurrentLanguage;
-            showGreetingCommand = new RelayCommand(ShowGreetingMessage, CanShowGreetingMessage);
+            selectedLanguage = LocalizationManager.CurrentLanguage;
+            showGreetingCommand = new RelayCommand(ShowGreetingMessage);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public LocalizationManager LocalizationManager => LocalizationManager.Instance;
 
-        public LocalizationManager LocalizationManager => localizationManager;
+        public DefaultBindingViewModel DefaultBindingViewModel { get; } = new();
 
-        public string UserName
-        {
-            get => userName;
-            set
-            {
-                if (SetField(ref userName, value))
-                {
-                    showGreetingCommand.RaiseCanExecuteChanged();
-                }
-            }
-        }
+        public TwoWayBindingViewModel TwoWayBindingViewModel { get; } = new();
+
+        public OneTimeBindingViewModel OneTimeBindingViewModel { get; } = new();
+
+        public OneWayBindingViewModel OneWayBindingViewModel { get; } = new();
 
         public LocalizationManager.LanguageOption SelectedLanguage
         {
             get => selectedLanguage;
             set
             {
-                if (SetField(ref selectedLanguage, value))
+                if (SetProperty(ref selectedLanguage, value))
                 {
-                    localizationManager.CurrentLanguage = value;
+                    LocalizationManager.CurrentLanguage = value;
                 }
             }
         }
 
         public ICommand ShowGreetingCommand => showGreetingCommand;
 
-        private bool CanShowGreetingMessage()
-        {
-            return !string.IsNullOrWhiteSpace(UserName);
-        }
-
         private void ShowGreetingMessage()
         {
-            var message = string.Format(localizationManager["GreetingMessageFormat"], UserName);
-            MessageBox.Show(message, localizationManager["GreetingTitle"], MessageBoxButton.OK, MessageBoxImage.Information);
-        }
+            var userName = string.IsNullOrWhiteSpace(TwoWayBindingViewModel.UserName)
+                ? LocalizationManager["FallbackUserName"]
+                : TwoWayBindingViewModel.UserName;
 
-        private bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
-        {
-            if (Equals(field, value))
-            {
-                return false;
-            }
-
-            field = value;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            return true;
+            var message = string.Format(LocalizationManager["GreetingMessageFormat"], userName);
+            MessageBox.Show(message, LocalizationManager["GreetingTitle"], MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

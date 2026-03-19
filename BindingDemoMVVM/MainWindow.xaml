@@ -3,139 +3,65 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:services="clr-namespace:BindingDemoMVVM.Services"
+        xmlns:local="clr-namespace:BindingDemoMVVM.Controls"
         mc:Ignorable="d"
-        Title="{Binding LocalizationManager[WindowTitle]}"
-        Height="520"
-        Width="860"
-        MinHeight="520"
-        MinWidth="860"
-        Background="#F4EFE6">
-    <Window.Resources>
-        <SolidColorBrush x:Key="CardBrush" Color="#FFFDF9"/>
-        <SolidColorBrush x:Key="PrimaryBrush" Color="#1F5C4B"/>
-        <SolidColorBrush x:Key="AccentBrush" Color="#D98B5F"/>
-        <SolidColorBrush x:Key="TextBrush" Color="#223127"/>
-        <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
-        </Style>
-        <Style x:Key="SectionLabelStyle" TargetType="TextBlock">
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Margin" Value="0,0,0,8"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="Padding" Value="12,10"/>
-            <Setter Property="BorderBrush" Value="#D9C9B8"/>
-            <Setter Property="BorderThickness" Value="1.5"/>
-            <Setter Property="Background" Value="#FFFDF9"/>
-            <Setter Property="FontSize" Value="14"/>
-        </Style>
-        <Style TargetType="ComboBox">
-            <Setter Property="Padding" Value="8,6"/>
-            <Setter Property="BorderBrush" Value="#D9C9B8"/>
-            <Setter Property="BorderThickness" Value="1.5"/>
-            <Setter Property="Background" Value="#FFFDF9"/>
-            <Setter Property="FontSize" Value="14"/>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="Padding" Value="16,10"/>
-            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Cursor" Value="Hand"/>
-        </Style>
-    </Window.Resources>
-    <Grid>
-        <Border Margin="28"
-                Padding="28"
-                Background="{StaticResource CardBrush}"
-                CornerRadius="24">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+        Title="{Binding LocalizationManager[WindowTitle], Mode=OneWay}"
+        Height="560"
+        Width="920">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-                <StackPanel>
-                    <TextBlock FontSize="30"
-                               FontWeight="Bold"
-                               Text="{Binding LocalizationManager[CardTitle]}"
-                               Foreground="{StaticResource PrimaryBrush}"/>
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="15"
-                               TextWrapping="Wrap"
-                               Text="{Binding LocalizationManager[CardDescription]}"/>
+        <Border Padding="12"
+                Margin="0,0,0,12"
+                Background="#F5F5F5"
+                BorderBrush="#DDDDDD"
+                BorderThickness="1"
+                CornerRadius="8">
+            <DockPanel LastChildFill="False">
+                <StackPanel DockPanel.Dock="Left"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <TextBlock Margin="0,0,10,0"
+                               VerticalAlignment="Center"
+                               FontWeight="SemiBold"
+                               Text="{Binding LocalizationManager[LanguageLabel], Mode=OneWay}"/>
+                    <ComboBox Width="150"
+                              ItemsSource="{Binding LocalizationManager.SupportedLanguages}"
+                              SelectedItem="{Binding SelectedLanguage}"
+                              DisplayMemberPath="DisplayName"/>
                 </StackPanel>
 
-                <Border Grid.Row="1"
-                        Margin="0,24,0,0"
-                        Padding="20"
-                        CornerRadius="18"
-                        Background="#F7F1E9">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="3*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Margin="0,0,24,0">
-                            <TextBlock Style="{StaticResource SectionLabelStyle}"
-                                       Text="{Binding LocalizationManager[LanguageLabel]}"/>
-                            <ComboBox ItemsSource="{Binding LocalizationManager.SupportedLanguages}"
-                                      SelectedItem="{Binding SelectedLanguage}"
-                                      DisplayMemberPath="DisplayName"/>
-                        </StackPanel>
-
-                        <StackPanel Grid.Column="1">
-                            <TextBlock Style="{StaticResource SectionLabelStyle}"
-                                       Text="{Binding LocalizationManager[NameLabel]}"/>
-                            <TextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Margin="0,8,0,0"
-                                       FontSize="12"
-                                       Foreground="#7D6B5D"
-                                       Text="{Binding LocalizationManager[NameHint]}"/>
-                        </StackPanel>
-                    </Grid>
-                </Border>
-
-                <Border Grid.Row="2"
-                        Margin="0,24,0,0"
-                        Padding="22"
-                        CornerRadius="20"
-                        BorderBrush="#E6D7C8"
-                        BorderThickness="1.5">
-                    <StackPanel>
-                        <TextBlock Style="{StaticResource SectionLabelStyle}"
-                                   Text="{Binding LocalizationManager[PreviewLabel]}"/>
-                        <TextBlock FontSize="26"
-                                   FontWeight="Bold"
-                                   Foreground="{StaticResource AccentBrush}">
-                            <Run Text="{Binding LocalizationManager[PreviewValueFormat]}"/>
-                        </TextBlock>
-                        <TextBlock Margin="0,14,0,0"
-                                   FontSize="16"
-                                   Text="{Binding UserName}"/>
-                    </StackPanel>
-                </Border>
-
-                <DockPanel Grid.Row="3" Margin="0,24,0,0">
-                    <TextBlock DockPanel.Dock="Left"
-                               VerticalAlignment="Center"
-                               FontSize="13"
-                               Foreground="#7D6B5D"
-                               Text="{Binding LocalizationManager[FooterNote]}"/>
-                    <Button DockPanel.Dock="Right"
-                            Width="220"
-                            HorizontalAlignment="Right"
-                            Content="{Binding LocalizationManager[ShowMessageButton]}"
-                            Command="{Binding ShowGreetingCommand}"/>
-                </DockPanel>
-            </Grid>
+                <Button DockPanel.Dock="Right"
+                        Width="220"
+                        Margin="12,0,0,0"
+                        Content="{Binding LocalizationManager[ShowMessageButton], Mode=OneWay}"
+                        Command="{Binding ShowGreetingCommand}"/>
+            </DockPanel>
         </Border>
+
+        <TabControl Grid.Row="1">
+            <TabItem Header="{Binding LocalizationManager[TabDefaultBinding], Mode=OneWay}">
+                <local:DefaultBindingControl DataContext="{Binding DefaultBindingViewModel}"/>
+            </TabItem>
+
+            <TabItem Header="{Binding LocalizationManager[TabTwoWayBinding], Mode=OneWay}">
+                <local:TwoWayBindingControl DataContext="{Binding TwoWayBindingViewModel}"/>
+            </TabItem>
+
+            <TabItem Header="{Binding LocalizationManager[TabOneTimeBinding], Mode=OneWay}">
+                <local:OneTimeBindingControl DataContext="{Binding OneTimeBindingViewModel}"/>
+            </TabItem>
+
+            <TabItem Header="{Binding LocalizationManager[TabOneWayBinding], Mode=OneWay}">
+                <local:OneWayBindingControl DataContext="{Binding OneWayBindingViewModel}"/>
+            </TabItem>
+
+            <TabItem Header="{Binding LocalizationManager[TabTriggers], Mode=OneWay}">
+                <local:TriggersControl/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
