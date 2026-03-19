@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Lab Work 2 - RESX Localization</value>
+  </data>
+  <data name="CardTitle" xml:space="preserve">
+    <value>WPF localization demo</value>
+  </data>
+  <data name="CardDescription" xml:space="preserve">
+    <value>The interface is translated dynamically at runtime using RESX resource files.</value>
+  </data>
+  <data name="LanguageLabel" xml:space="preserve">
+    <value>Select language</value>
+  </data>
+  <data name="NameLabel" xml:space="preserve">
+    <value>Enter your name</value>
+  </data>
+  <data name="NameHint" xml:space="preserve">
+    <value>For example, John</value>
+  </data>
+  <data name="PreviewLabel" xml:space="preserve">
+    <value>Message preview</value>
+  </data>
+  <data name="PreviewValueFormat" xml:space="preserve">
+    <value>Hello, {0}!</value>
+  </data>
+  <data name="ShowMessageButton" xml:space="preserve">
+    <value>Show message</value>
+  </data>
+  <data name="FooterNote" xml:space="preserve">
+    <value>This version uses RESX resource files for localization.</value>
+  </data>
+  <data name="GreetingTitle" xml:space="preserve">
+    <value>Localized message</value>
+  </data>
+  <data name="GreetingMessageFormat" xml:space="preserve">
+    <value>Hello, {0}! The application language has been switched successfully.</value>
+  </data>
+</root>
