@@ -1,0 +1,6 @@
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM.Localization\bin\ExternalLibCheck\BindingDemoMVVM.Localization.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM.Localization\bin\ExternalLibCheck\BindingDemoMVVM.Localization.pdb
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM.Localization\obj\Debug\BindingDemoMVVM.Localization.csproj.AssemblyReference.cache
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM.Localization\obj\Debug\BindingDemoMVVM.Localization.csproj.CoreCompileInputs.cache
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM.Localization\obj\Debug\BindingDemoMVVM.Localization.dll
+C:\Users\la692\OneDrive\Рабочий стол\BindingDemoMVVM\BindingDemoMVVM.Localization\obj\Debug\BindingDemoMVVM.Localization.pdb

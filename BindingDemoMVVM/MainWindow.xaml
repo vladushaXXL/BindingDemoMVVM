@@ -1,33 +1,66 @@
-﻿<Window x:Class="BindingDemoMVVM.MainWindow"
+<Window x:Class="BindingDemoMVVM.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BindingDemoMVVM.Controls"
-        xmlns:viewModels="clr-namespace:BindingDemoMVVM.ViewModels"
+        xmlns:localization="clr-namespace:BindingDemoMVVM.Localization;assembly=BindingDemoMVVM.Localization"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding Source={x:Static localization:LocalizationProvider.Instance}, Path=[WindowTitle]}"
+        Height="560"
+        Width="920">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-    <Grid>
-        <TabControl>
+        <Border Padding="12"
+                Margin="0,0,0,12"
+                Background="#F5F5F5"
+                BorderBrush="#DDDDDD"
+                BorderThickness="1"
+                CornerRadius="8">
+            <DockPanel LastChildFill="False">
+                <StackPanel DockPanel.Dock="Left"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <TextBlock Margin="0,0,10,0"
+                               VerticalAlignment="Center"
+                               FontWeight="SemiBold"
+                               Text="{Binding Source={x:Static localization:LocalizationProvider.Instance}, Path=[LanguageLabel]}"/>
+                    <ComboBox Width="150"
+                              ItemsSource="{Binding LocalizationProvider.SupportedLanguages}"
+                              SelectedItem="{Binding SelectedLanguage}"
+                              DisplayMemberPath="DisplayName"/>
+                </StackPanel>
 
-            <TabItem Header="Привязка по умолчанию">
+                <Button DockPanel.Dock="Right"
+                        Width="220"
+                        Margin="12,0,0,0"
+                        Content="{Binding Source={x:Static localization:LocalizationProvider.Instance}, Path=[ShowMessageButton]}"
+                        Command="{Binding ShowGreetingCommand}"/>
+            </DockPanel>
+        </Border>
+
+        <TabControl Grid.Row="1">
+            <TabItem Header="{Binding Source={x:Static localization:LocalizationProvider.Instance}, Path=[TabDefaultBinding]}">
                 <local:DefaultBindingControl DataContext="{Binding DefaultBindingViewModel}"/>
             </TabItem>
 
-            <TabItem Header="Двухсторонняя привязка">
+            <TabItem Header="{Binding Source={x:Static localization:LocalizationProvider.Instance}, Path=[TabTwoWayBinding]}">
                 <local:TwoWayBindingControl DataContext="{Binding TwoWayBindingViewModel}"/>
             </TabItem>
 
-            <TabItem Header="Одноразовая привязка">
+            <TabItem Header="{Binding Source={x:Static localization:LocalizationProvider.Instance}, Path=[TabOneTimeBinding]}">
                 <local:OneTimeBindingControl DataContext="{Binding OneTimeBindingViewModel}"/>
             </TabItem>
 
-            <TabItem Header="Односторонняя привязка">
+            <TabItem Header="{Binding Source={x:Static localization:LocalizationProvider.Instance}, Path=[TabOneWayBinding]}">
                 <local:OneWayBindingControl DataContext="{Binding OneWayBindingViewModel}"/>
             </TabItem>
 
-            <TabItem Header="Триггеры">
+            <TabItem Header="{Binding Source={x:Static localization:LocalizationProvider.Instance}, Path=[TabTriggers]}">
                 <local:TriggersControl/>
             </TabItem>
         </TabControl>

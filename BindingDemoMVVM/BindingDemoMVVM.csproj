@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="obj\BindingDemoMVVM.csproj.nuget.g.props" Condition="Exists('obj\BindingDemoMVVM.csproj.nuget.g.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -53,25 +54,25 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="CommunityToolkit.Mvvm">
-      <HintPath>$(NuGetPackageRoot)communitytoolkit.mvvm\8.4.0\lib\netstandard2.0\CommunityToolkit.Mvvm.dll</HintPath>
+      <HintPath>$(UserProfile)\.nuget\packages\communitytoolkit.mvvm\8.4.0\lib\netstandard2.0\CommunityToolkit.Mvvm.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces">
-      <HintPath>$(NuGetPackageRoot)microsoft.bcl.asyncinterfaces\8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <HintPath>$(UserProfile)\.nuget\packages\microsoft.bcl.asyncinterfaces\8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-      <HintPath>$(NuGetPackageRoot)system.buffers\4.6.0\lib\net462\System.Buffers.dll</HintPath>
+      <HintPath>$(UserProfile)\.nuget\packages\system.buffers\4.6.0\lib\net462\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Annotations">
-      <HintPath>$(NuGetPackageRoot)system.componentmodel.annotations\5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+      <HintPath>$(UserProfile)\.nuget\packages\system.componentmodel.annotations\5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-      <HintPath>$(NuGetPackageRoot)system.memory\4.6.0\lib\net462\System.Memory.dll</HintPath>
+      <HintPath>$(UserProfile)\.nuget\packages\system.memory\4.6.0\lib\net462\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>$(NuGetPackageRoot)system.runtime.compilerservices.unsafe\6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>$(UserProfile)\.nuget\packages\system.runtime.compilerservices.unsafe\6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions">
-      <HintPath>$(NuGetPackageRoot)system.threading.tasks.extensions\4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <HintPath>$(UserProfile)\.nuget\packages\system.threading.tasks.extensions\4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
@@ -132,6 +133,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\DefaultBindingViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\OneTimeBindingViewModel.cs" />
@@ -165,6 +167,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BindingDemoMVVM.Localization\BindingDemoMVVM.Localization.csproj">
+      <Project>{E5D9E9CB-2F25-4E45-9A03-7A7B4FC9E108}</Project>
+      <Name>BindingDemoMVVM.Localization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm">
       <Version>8.4.0</Version>
     </PackageReference>
@@ -191,4 +199,5 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="obj\BindingDemoMVVM.csproj.nuget.g.targets" Condition="Exists('obj\BindingDemoMVVM.csproj.nuget.g.targets')" />
 </Project>
