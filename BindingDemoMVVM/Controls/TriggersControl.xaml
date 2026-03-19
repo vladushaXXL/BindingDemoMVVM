@@ -9,7 +9,7 @@
     <UserControl.Resources>
         <!-- Стиль кнопки с PropertyTrigger: цвет при наведении -->
         <Style x:Key="HoverButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Background" Value="LightGreen"/>
             <Setter Property="Padding" Value="15,8"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -53,7 +53,7 @@
         <!-- PropertyTrigger -->
         <TextBlock Text="1. PropertyTrigger — кнопка меняет цвет при наведении (IsMouseOver):" 
                    TextWrapping="Wrap" Margin="0,0,0,8"/>
-        <Button Style="{StaticResource HoverButtonStyle}" Content="Наведи курсор" Width="180" HorizontalAlignment="Left" Margin="0,0,0,20"/>
+        <Button Style="{StaticResource HoverButtonStyle}" Content="Наведи курсор" Width="180" HorizontalAlignment="Center" Margin="0,0,0,20"/>
         <!-- DataTrigger -->
         <TextBlock Text="2. DataTrigger — текст меняется при условии (CheckBox IsChecked):" 
                    TextWrapping="Wrap" Margin="0,0,0,8"/>
@@ -65,7 +65,7 @@
         <!-- EventTrigger -->
         <TextBlock Text="3. EventTrigger — анимация при нажатии кнопки (Click):" 
                    TextWrapping="Wrap" Margin="0,0,0,8"/>
-        <Button Style="{StaticResource AnimatedButtonStyle}" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+        <Button Style="{StaticResource AnimatedButtonStyle}" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <ScaleTransform ScaleX="1" ScaleY="1"/>
             </Button.RenderTransform>

@@ -2,15 +2,28 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BindingDemoMVVM.ViewModels
 {
-    public partial class TwoWayBindingViewModel : ObservableObject
+    public class TwoWayBindingViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private string userName;
+        private string userName = "Студент";
+        private int age = 20;
+        private bool isActive = true;
 
-        [ObservableProperty]
-        private int age;
+        public string UserName
+        {
+            get => userName;
+            set => SetProperty(ref userName, value);
+        }
 
-        [ObservableProperty]
-        private bool isActive;
+        public int Age
+        {
+            get => age;
+            set => SetProperty(ref age, value);
+        }
+
+        public bool IsActive
+        {
+            get => isActive;
+            set => SetProperty(ref isActive, value);
+        }
     }
 }

@@ -12,19 +12,19 @@
         <TabControl>
 
             <TabItem Header="Привязка по умолчанию">
-                <local:DefaultBindingControl/>
+                <local:DefaultBindingControl DataContext="{Binding DefaultBindingViewModel}"/>
             </TabItem>
 
             <TabItem Header="Двухсторонняя привязка">
-                <local:TwoWayBindingControl/>
+                <local:TwoWayBindingControl DataContext="{Binding TwoWayBindingViewModel}"/>
             </TabItem>
 
             <TabItem Header="Одноразовая привязка">
-                <local:OneTimeBindingControl/>
+                <local:OneTimeBindingControl DataContext="{Binding OneTimeBindingViewModel}"/>
             </TabItem>
 
             <TabItem Header="Односторонняя привязка">
-                <local:OneWayBindingControl/>
+                <local:OneWayBindingControl DataContext="{Binding OneWayBindingViewModel}"/>
             </TabItem>
 
             <TabItem Header="Триггеры">

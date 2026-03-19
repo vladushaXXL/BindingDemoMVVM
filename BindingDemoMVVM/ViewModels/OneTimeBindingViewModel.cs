@@ -2,9 +2,14 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BindingDemoMVVM.ViewModels
 {
-    public partial class OneTimeBindingViewModel : ObservableObject
+    public class OneTimeBindingViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private string message = "Это сообщение устанавливается один раз";
+        private string initialValue = "Это сообщение устанавливается один раз";
+
+        public string InitialValue
+        {
+            get => initialValue;
+            set => SetProperty(ref initialValue, value);
+        }
     }
 }

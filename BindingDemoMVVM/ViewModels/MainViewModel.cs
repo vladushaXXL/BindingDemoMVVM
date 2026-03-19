@@ -1,8 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BindingDemoMVVM.ViewModels
 {
-    public partial class MainViewModel : ObservableObject
+    public class MainViewModel : ObservableObject
     {
         public DefaultBindingViewModel DefaultBindingViewModel { get; } = new();
         public TwoWayBindingViewModel TwoWayBindingViewModel { get; } = new();

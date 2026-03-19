@@ -4,22 +4,28 @@ using System.Windows.Threading;
 
 namespace BindingDemoMVVM.ViewModels
 {
-    public partial class OneWayBindingViewModel : ObservableObject
+    public class OneWayBindingViewModel : ObservableObject
     {
-        private DispatcherTimer timer;
+        private readonly DispatcherTimer timer;
+        private string currentTime = string.Empty;
 
-        [ObservableProperty]
-        private int progressValue = 25;
+        public string CurrentTime
+        {
+            get => currentTime;
+            set => SetProperty(ref currentTime, value);
+        }
 
-        [ObservableProperty]
-        private string currentTime;
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OneWayBindingViewModel"/> class.
+        /// </summary>
         public OneWayBindingViewModel()
         {
             CurrentTime = DateTime.Now.ToString("HH:mm:ss");
 
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
 
             timer.Tick += (s, e) =>
             {

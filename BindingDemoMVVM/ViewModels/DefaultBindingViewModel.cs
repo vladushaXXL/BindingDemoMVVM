@@ -2,12 +2,35 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BindingDemoMVVM.ViewModels
 {
-    public partial class DefaultBindingViewModel : ObservableObject
+    public class DefaultBindingViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private string  inputText;
+        private string text = "Пример текста";
+        private int number = 42;
+        private bool flag = true;
+        private double value = 0.5;
 
-        [ObservableProperty]
-        private string outputText = "Пример текста";
+        public string Text
+        {
+            get => text;
+            set => SetProperty(ref text, value);
+        }
+
+        public int Number
+        {
+            get => number;
+            set => SetProperty(ref number, value);
+        }
+
+        public bool Flag
+        {
+            get => flag;
+            set => SetProperty(ref flag, value);
+        }
+
+        public double Value
+        {
+            get => this.value;
+            set => SetProperty(ref this.value, value);
+        }
     }
 }
